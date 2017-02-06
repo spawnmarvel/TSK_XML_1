@@ -8,5 +8,6 @@ namespace XmlHelper.XmlWorker
 {
     class XmlWorker
     {
+        //from work
     }
 }
