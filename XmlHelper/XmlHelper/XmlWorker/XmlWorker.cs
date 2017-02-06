@@ -17,8 +17,10 @@ namespace XmlHelper.XmlWorker
         public static string qPersistent;
         public static string qExchange;
         public static string qUri;
-        public static void readXml()
+
+        public static string readXml()
         {
+            string res = "";
             try
             {
                 XmlDocument doc = new XmlDocument();
@@ -33,6 +35,7 @@ namespace XmlHelper.XmlWorker
                     qPersistent = q["PersistentMessages"].InnerText;
                     qExchange = q["ExchangeName"].InnerText;
                     qUri = q["URI"].InnerText;
+                    res = queueName + qDurable + qPersistent + qExchange + qUri;
 
 
                 }
@@ -40,7 +43,9 @@ namespace XmlHelper.XmlWorker
             catch (Exception n)
             {
                 Console.WriteLine("There was an error i xml: " + n.Message);
+                res  = "Error " + n.Message;
             }
+            return res;
             //Console.ReadLine();
 
         }
