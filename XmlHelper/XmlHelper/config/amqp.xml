@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AmqpQueueConfigList>
+  <AmqpQueueConfig>
+    <QueueType>Value</QueueType>
+    <URI>localhost</URI>
+    <ExchangeName>amq.direct</ExchangeName>
+    <Topic>data</Topic>
+    <QueueName>amqp_value_queue_2</QueueName>
+    <PersistentMessages>true</PersistentMessages>
+    <Durable>true</Durable>
+    <AutodeleteQueue>true</AutodeleteQueue>
+    <DataFlow>Provider</DataFlow>
+  </AmqpQueueConfig>
+</AmqpQueueConfigList>
