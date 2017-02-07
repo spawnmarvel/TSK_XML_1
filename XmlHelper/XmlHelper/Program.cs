@@ -13,7 +13,7 @@ namespace XmlHelper
         static void Main(string[] args)
         {
             logger.Info("Started");
-            XmlWorker.XmlWorker.getConfig();
+            XmlWorker.XmlWorker.readXml();
             Console.ReadLine();
 
 
