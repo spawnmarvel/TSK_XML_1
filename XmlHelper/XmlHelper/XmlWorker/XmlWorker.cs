@@ -25,6 +25,7 @@ namespace XmlHelper.XmlWorker
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load("config/amqp.xml");
+                //click on file and change to copy always (copy to output dir)
                 XmlNodeList queuconfig = doc.SelectNodes("//AmqpQueueConfig");
                 foreach (XmlNode q in queuconfig)
                 {
