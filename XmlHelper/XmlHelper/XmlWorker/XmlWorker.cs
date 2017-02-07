@@ -20,7 +20,8 @@ namespace XmlHelper.XmlWorker
 
         public static string readXml()
         {
-            Dictionary<String, string[]> map = new Dictionary<string, string[]>();
+            
+            
             string res = "";
             try
             {
@@ -46,6 +47,12 @@ namespace XmlHelper.XmlWorker
             }
             return res;
             //Console.ReadLine();
+        }
+
+        public Dictionary<string, string> getConfig()
+        {
+            Dictionary<String, string> map = new Dictionary<string, string>();
+            return map;
         }
     }
 }
