@@ -20,12 +20,11 @@ namespace XmlHelper.XmlWorker
         public static string qExchange;
         public static string qUri;
 
-        public static string readXml()
+        public static List<String> readXml()
         {
-
+            List<String> list = new List<string>();
             logger.Info("readXml()");
             string res = "";
-            int count = 0;
             try
             {
                 XmlDocument doc = new XmlDocument();
@@ -40,8 +39,8 @@ namespace XmlHelper.XmlWorker
                     qPersistent = Convert.ToBoolean(q["PersistentMessages"].InnerText);
                     qExchange = q["ExchangeName"].InnerText;
                     qUri = q["URI"].InnerText;
-                    res += queueName + " ; " + qDurable + " ; " + qPersistent + " ; " + qExchange + " ; "+ qUri + ";";
-                    count += 1;
+                    res = queueName + " ; " + qDurable + " ; " + qPersistent + " ; " + qExchange + " ; "+ qUri + ";";
+                    list.Add(res);
                     logger.Debug(res);
 
                 }
@@ -50,9 +49,8 @@ namespace XmlHelper.XmlWorker
             {
                 logger.Error("Error:" + n.Message);
             }
-            res = count + ";" + res;
-            logger.Debug(res);
-            return res;
+            logger.Debug(list.Count);
+            return list;
         }
 
     }
