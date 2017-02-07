@@ -31,25 +31,21 @@ namespace XmlHelper.XmlWorker
                 foreach (XmlNode q in queuconfig)
                 {
                     //make a list or hasmap, put the shit in that
-
                     queueName = q["QueueName"].InnerText;
                     qDurable = Convert.ToBoolean(q["Durable"].InnerText);
                     qPersistent = q["PersistentMessages"].InnerText;
                     qExchange = q["ExchangeName"].InnerText;
                     qUri = q["URI"].InnerText;
                     res = queueName + qDurable + qPersistent + qExchange + qUri;
-
-
                 }
             }
             catch (Exception n)
             {
-                Console.WriteLine("There was an error i xml: " + n.Message);
-                res  = "Error " + n.Message;
+                //Console.WriteLine("There was an error i xml: " + n.Message);
+                res = "Error " + n.Message;
             }
             return res;
             //Console.ReadLine();
-
         }
     }
 }
