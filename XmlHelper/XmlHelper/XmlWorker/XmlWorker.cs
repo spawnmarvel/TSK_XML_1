@@ -20,6 +20,7 @@ namespace XmlHelper.XmlWorker
 
         public static string readXml()
         {
+            Dictionary<String, string[]> map = new Dictionary<string, string[]>();
             string res = "";
             try
             {
