@@ -9,11 +9,13 @@ namespace XmlHelper
 {
     class Program
     {
+        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(Program));
         static void Main(string[] args)
         {
-            Console.WriteLine(XmlWorker.XmlWorker.readXml());
+            logger.Info("Started");
+            XmlWorker.XmlWorker.getConfig();
             Console.ReadLine();
-           
+
 
         }
     }
