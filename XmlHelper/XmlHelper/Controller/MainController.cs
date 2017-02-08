@@ -7,11 +7,11 @@ using XmlHelper.Connector;
 
 namespace XmlHelper.Controller
 {
-    class Controller
+    class MainController
     {
-        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(Controller));
+        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(MainController));
 
-        public Controller()
+        public MainController()
         {
             startConnection();
         }

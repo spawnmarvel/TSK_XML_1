@@ -10,10 +10,11 @@ namespace XmlHelper
     class Program
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(Program));
+   
         static void Main(string[] args)
         {
             logger.Info("Started Main");
-            Controller.Controller c = new Controller.Controller();
+            MainController mc = new MainController();
             Console.ReadLine();
 
 
