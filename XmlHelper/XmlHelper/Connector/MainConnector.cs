@@ -35,7 +35,7 @@ namespace XmlHelper.Connector
         public static bool connectToSource()
         {
             logger.Info("Connecting......");
-            return true;//if connections is ok
+            return true;//if connections is ok...
             //return false if not and reconnect while config is valid...
 
         }
