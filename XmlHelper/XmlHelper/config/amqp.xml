@@ -11,26 +11,6 @@
     <AutodeleteQueue>false</AutodeleteQueue>
     <DataFlow>Provider</DataFlow>
   </AmqpQueueConfig>
-  <AmqpQueueConfig>
-    <QueueType>Value</QueueType>
-    <URI>localhost</URI>
-    <ExchangeName>amq.direct</ExchangeName>
-    <Topic>data</Topic>
-    <QueueName>2_amqp_value_queue</QueueName>
-    <PersistentMessages>true</PersistentMessages>
-    <Durable>true</Durable>
-    <AutodeleteQueue>false</AutodeleteQueue>
-    <DataFlow>Provider</DataFlow>
-  </AmqpQueueConfig>
-  <AmqpQueueConfig>
-    <QueueType>Value</QueueType>
-    <URI>localhost</URI>
-    <ExchangeName>amq.direct</ExchangeName>
-    <Topic>data</Topic>
-    <QueueName>3_amqp_value_queue</QueueName>
-    <PersistentMessages>true</PersistentMessages>
-    <Durable>true</Durable>
-    <AutodeleteQueue>false</AutodeleteQueue>
-    <DataFlow>Provider</DataFlow>
-  </AmqpQueueConfig>
+  <DataQueueConfig>
+  </DataQueueConfig>
 </AmqpQueueConfigList>

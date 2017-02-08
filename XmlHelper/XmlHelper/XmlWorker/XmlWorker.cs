@@ -20,10 +20,10 @@ namespace XmlHelper.XmlWorker
         public static string qExchange;
         public static string qUri;
 
-        public static List<String> readXml()
+        public static bool readXml()
         {
-            List<String> list = new List<string>();
-            logger.Info("readXml()");
+            bool connect = false;
+            logger.Info("Reading config");
             string res = "";
             try
             {
@@ -40,8 +40,9 @@ namespace XmlHelper.XmlWorker
                     qExchange = q["ExchangeName"].InnerText;
                     qUri = q["URI"].InnerText;
                     res = queueName + " ; " + qDurable + " ; " + qPersistent + " ; " + qExchange + " ; "+ qUri + ";";
-                    list.Add(res);
                     logger.Debug(res);
+                    connect = true;
+                    logger.Info("Connection = " + connect);
 
                 }
             }
@@ -49,8 +50,7 @@ namespace XmlHelper.XmlWorker
             {
                 logger.Error("Error:" + n.Message);
             }
-            logger.Debug(list.Count);
-            return list;
+            return connect;
         }
 
     }
