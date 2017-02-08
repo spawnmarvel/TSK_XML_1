@@ -21,5 +21,6 @@ namespace XmlHelper.Controller
             logger.Info("Started work from Controller");
             logger.Info("Call Connector methods and work");
         }
+        //add while connection == true
     }
 }
