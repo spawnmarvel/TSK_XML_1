@@ -15,6 +15,8 @@ namespace XmlHelper
         {
             logger.Info("Started Main");
             MainController mc = new MainController();
+            DateTime dt = DateTime.Now;
+            Console.WriteLine("Testing " + dt);
             Console.ReadLine();
 
 
