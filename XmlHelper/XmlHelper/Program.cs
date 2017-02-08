@@ -16,6 +16,7 @@ namespace XmlHelper
             logger.Info("******************************");
             logger.Info("******************");
             logger.Info("*********");
+            logger.Info("V 1.3");
             logger.Info("Started Main");
             MainController mc = new MainController();
             DateTime dt = DateTime.Now;
