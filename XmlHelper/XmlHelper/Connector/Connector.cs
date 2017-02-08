@@ -21,8 +21,9 @@ namespace XmlHelper.Connector
                 bool per = XmlWorker.XmlWorker.qPersistent;
                 string ex = XmlWorker.XmlWorker.qExchange;
                 string ur = XmlWorker.XmlWorker.qUri;
+                string source = XmlWorker.XmlWorker.dataSource;
                 logger.Info("Connection connected");
-                logger.Info("Connector can work....");
+                logger.Info("Connector can work with queue: " + qu + " And data source: " + source);
             }
             else
             {

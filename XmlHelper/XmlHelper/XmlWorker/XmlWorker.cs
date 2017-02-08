@@ -19,6 +19,7 @@ namespace XmlHelper.XmlWorker
         public static bool qPersistent;
         public static string qExchange;
         public static string qUri;
+        public static string dataSource;
 
         public static bool readXml()
         {
@@ -27,11 +28,20 @@ namespace XmlHelper.XmlWorker
             string res = "";
             try
             {
-                XmlDocument doc = new XmlDocument();
-                doc.Load("config/amqp.xml");
+                //amqp
+                XmlDocument sourceAmqp = new XmlDocument();
+                sourceAmqp.Load("config/amqp.xml");
                 //click on file and change to copy always (copy to output dir)
-                XmlNodeList queuconfig = doc.SelectNodes("//AmqpQueueConfig");
-                foreach (XmlNode q in queuconfig)
+                XmlNodeList queuconfigAMQP = sourceAmqp.SelectNodes("//AmqpQueueConfig");
+
+                //data source
+                XmlDocument sourceData = new XmlDocument();
+                sourceData.Load("config/amqp.xml");
+                //click on file and change to copy always (copy to output dir)
+                XmlNodeList queuconfigData = sourceData.SelectNodes("//DataSourceConfig");
+                //AMQP
+                logger.Info("Read AMQP");
+                foreach (XmlNode q in queuconfigAMQP)
                 {
                     //make a list or hasmap, put the shit in that
                     queueName = q["QueueName"].InnerText;
@@ -40,6 +50,17 @@ namespace XmlHelper.XmlWorker
                     qExchange = q["ExchangeName"].InnerText;
                     qUri = q["URI"].InnerText;
                     res = queueName + " ; " + qDurable + " ; " + qPersistent + " ; " + qExchange + " ; "+ qUri + ";";
+                    logger.Debug(res);
+                    connect = true;
+                    logger.Info("Connection = " + connect);
+
+                }
+                logger.Info("Read DataSource");
+                foreach (XmlNode q in queuconfigData)
+                {
+                    //make a list or hasmap, put the shit in that
+                    dataSource = q["Source"].InnerText;
+                    res = dataSource;
                     logger.Debug(res);
                     connect = true;
                     logger.Info("Connection = " + connect);

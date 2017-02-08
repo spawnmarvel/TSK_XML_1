@@ -11,6 +11,7 @@
     <AutodeleteQueue>false</AutodeleteQueue>
     <DataFlow>Provider</DataFlow>
   </AmqpQueueConfig>
-  <DataQueueConfig>
-  </DataQueueConfig>
+  <DataSourceConfig>
+    <Source>File</Source>
+  </DataSourceConfig>
 </AmqpQueueConfigList>
