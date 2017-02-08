@@ -17,7 +17,7 @@ namespace XmlHelper.Controller
         }
         public void startConnection()
         {
-            MainConnector.connectToSource();
+            MainConnector.doWork();
             logger.Info("Started work from Controller");
             logger.Info("Call Connector methods and work");
         }

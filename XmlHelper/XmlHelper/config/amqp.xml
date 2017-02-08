@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <AmqpQueueConfigList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <AmqpQueueConfig>
-    <QueueType>Value</QueueType>
+    <QueueName>1_amqp_value_queue</QueueName>
+    <QueueType>value</QueueType>
+    <Topic>data</Topic>
     <URI>localhost</URI>
     <ExchangeName>amq.direct</ExchangeName>
-    <Topic>data</Topic>
-    <QueueName>1_amqp_value_queue</QueueName>
     <PersistentMessages>true</PersistentMessages>
     <Durable>true</Durable>
     <AutodeleteQueue>false</AutodeleteQueue>

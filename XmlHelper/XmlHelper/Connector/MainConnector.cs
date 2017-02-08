@@ -11,26 +11,33 @@ namespace XmlHelper.Connector
     {
         private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(MainConnector));
 
-        public static Boolean connectToSource()
+        public static Boolean doWork()
         {
+            logger.Info("Started do work... put in states here");
             bool connect = false;
-            if(XmlWorker.XmlWorker.readXml() == true)
-            {
-                string qu = XmlWorker.XmlWorker.queueName;
-                bool dur = XmlWorker.XmlWorker.qDurable;
-                bool per = XmlWorker.XmlWorker.qPersistent;
-                string ex = XmlWorker.XmlWorker.qExchange;
-                string ur = XmlWorker.XmlWorker.qUri;
-                string source = XmlWorker.XmlWorker.dataSource;
-                logger.Info("Connection connected");
-                logger.Info("Connector can work with queue: " + qu + " And data source: " + source);
+            if(XmlWorkerNode.readXml() == true)
+            { 
+                logger.Info("Configuration is valid");
+                logger.Info("Connector can try to establish connection");
+                if(connectToSource() == true)
+                {
+                    logger.Info("State is connected..work");
+                }
             }
             else
             {
-                logger.Error("Could not connect, check config and source");
+                logger.Error("Check config and source, stopping work...");
             }
             return connect;
             
+        }
+
+        public static bool connectToSource()
+        {
+            logger.Info("Connecting......");
+            return true;//if connections is ok
+            //return false if not and reconnect while config is valid...
+
         }
     }
 }
