@@ -7,9 +7,9 @@ using XmlHelper.XmlWorker;
 
 namespace XmlHelper.Connector
 {
-    class Connector
+    class MainConnector
     {
-        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(Connector));
+        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(MainConnector));
 
         public static Boolean connectToSource()
         {
