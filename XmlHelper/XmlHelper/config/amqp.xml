@@ -12,6 +12,8 @@
     <DataFlow>Provider</DataFlow>
   </AmqpQueueConfig>
   <DataSourceConfig>
-    <Source>File</Source>
+    <Source>PostGreSql</Source>
+    <User>johndoe</User>
+    <Passw>secretline</Passw>
   </DataSourceConfig>
 </AmqpQueueConfigList>

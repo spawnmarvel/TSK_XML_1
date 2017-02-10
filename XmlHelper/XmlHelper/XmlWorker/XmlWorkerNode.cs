@@ -18,7 +18,7 @@ namespace XmlHelper.XmlWorker
         public static bool qPersistent;
         public static string qExchange;
         public static string qUri;
-        public static string dataSource;
+        public static string user;
         public XmlWorkerNode()
         {
 
@@ -77,6 +77,24 @@ namespace XmlHelper.XmlWorker
                                     }
                                     else
                                     {
+                                        logger.Info("Value XML: " + reader.Value.Trim());
+                                    }
+                                }
+                                break;
+                            case "User":
+                                // Detect this element.
+                                logger.Debug("Start <User> element.");
+                                // Next read will contain text.
+                                if (reader.Read())
+                                {
+                                    if (validateValueXml(reader.Value) == false)
+                                    {
+                                        logger.Error("Missing value in config -> " + reader.Value.Trim());
+                                        readerState = false;
+                                    }
+                                    else
+                                    {
+                                        user = reader.Value.Trim();
                                         logger.Info("Value XML: " + reader.Value.Trim());
                                     }
                                 }

@@ -15,21 +15,22 @@ namespace XmlHelper.Connector
         {
             logger.Info("Started do work... put in states here");
             bool connect = false;
-            if(XmlWorkerNode.readXml() == true)
-            { 
-                logger.Info("Configuration is valid");
-                logger.Info("Connector can try to establish connection");
-                if(connectToSource() == true)
-                {
-                    logger.Info("State is connected..work");
-                }
+            if (XmlWorkerNode.readXml() == true)
+            {
+                logger.Info("Queue configuration is valid");
+                logger.Info("Starting to parse data source info");
+                string user = XmlWorkerNode.user;
+
+                logger.Info("Connector can try to establish connection with user : " + user);
+                //connector logic here
+
             }
             else
             {
                 logger.Error("Check config and source, stopping work...");
             }
             return connect;
-            
+
         }
 
         public static bool connectToSource()
